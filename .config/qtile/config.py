@@ -128,8 +128,7 @@ for i, group in enumerate(groups[:-1], 1):
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(group.name, switch_group=True)))
 
 layouts = [
-    layout.MonadTall(border_focus=GREEN, border_width=1, ratio=0.62),
-    layout.Spiral(border_width=1,border_focus="#4CAF50"),
+    layout.MonadTall(border_focus=GREEN, border_width=1, ratio=0.62, single_border_width=0),
     layout.Columns(border_width=1,border_focus="#4CAF50"),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
