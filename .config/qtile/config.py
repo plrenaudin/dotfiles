@@ -98,8 +98,8 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
 
     # Brightness
-    Key([], "XF86MonBrightnessDown", lazy.spawn('/home/plrenaudin/.config/qtile/brightness.sh -')),
-    Key([], "XF86MonBrightnessUp", lazy.spawn('/home/plrenaudin/.config/qtile/brightness.sh +')),
+    Key([], "XF86MonBrightnessDown", lazy.spawn('brightnessctl s 2000-')),
+    Key([], "XF86MonBrightnessUp", lazy.spawn('brightnessctl s +2000')),
 
     Key([mod], "Print", lazy.spawn("scrot -e 'mv $f /home/plrenaudin/Pictures/' -s")),
 
@@ -167,7 +167,6 @@ screens = [
                 widget.Battery( format="{char} {percent:2.0%}", charge_char=" ", discharge_char=" ", empty_char=" ", full_char=" ", unknown_char=" ", low_percentage=0.2, low_foreground=RED, show_short_text=False, notify_below=15),
                 widget.Volume( emoji=True, padding=5),
                 widget.CheckUpdates( colour_have_updates=RED, colour_no_updates=WHITE, custom_command="checkupdates", display_format=" {updates}", no_update_string=" ", update_interval=3200),
-                widget.Notify(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
             ],
             22,
