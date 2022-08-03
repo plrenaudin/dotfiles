@@ -102,7 +102,7 @@ keys = [
 groups = (
     Group('1', label='', layout='monadtall', spawn='brave'),
     Group('2', label='', layout='monadtall', spawn='code', matches=[Match(wm_class=["code"])]),
-    Group('3', label='', layout='columns', spawn=['alacritty','alacritty']),
+    Group('3', label='', layout='columns'),
     Group('4', label='', layout='monadtall'),
     Group('5', label='⛁', layout='monadtall'),
     Group('6', label='', layout='monadtall'),
@@ -178,7 +178,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
