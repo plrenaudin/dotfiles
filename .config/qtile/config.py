@@ -157,8 +157,7 @@ screens = [
                 widget.GroupBox(highlight_method='line', highlight_color='00000000',this_current_screen_border=WHITE),
                 widget.Spacer(length=5),
                 widget.CurrentLayoutIcon(scale=.7),
-                widget.Spacer(length=5),
-                widget.WindowName(),
+                widget.Spacer(),
                 widget.CPUGraph(border_width=0, margin_y=1, fill_color=f"{RED}.3", graph_color=RED),
                 widget.MemoryGraph(border_width=0, margin_y=1, fill_color=f"{GREEN}.3",graph_color=GREEN),
                 widget.NetGraph(border_width=0, margin_y=1, fill_color=f"{BLUE}.3", graph_color=BLUE),
@@ -169,7 +168,7 @@ screens = [
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
             ],
             22,
-            background = "#00000044",
+            background = "#00000000",
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
