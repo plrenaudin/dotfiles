@@ -44,11 +44,6 @@ mod = "mod4"
 terminal = guess_terminal()
 home = os.path.expanduser('~')
 
-class Commands:
-    dmenu = "dmenu_run -i -b -p '>>>' -fn 'Open Sans-10' -nb '#000' -nf '#fff' -sb '#00BF32' -sf '#fff'"
-    dmenu_session = "dmenu-session"
-    dmenu_mocp = "dmenu-mocp"
-    dmenu_windows = "dmenu-qtile-windowlist.py"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -58,7 +53,6 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.spawn(Commands.dmenu)),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -89,7 +83,6 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn(Commands.dmenu)),
     Key([mod], "m", lazy.window.toggle_fullscreen(), desc='toggle window between minimum and maximum sizes'),
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc='toggle floating'),
     Key([], "F12", lazy.group["scratchpad"].dropdown_toggle('term'), desc='Dropdown terminal'),
@@ -107,7 +100,7 @@ keys = [
 ]
 
 groups = (
-    Group('1', label='', layout='monadtall', spawn='com.brave.Browser'),
+    Group('1', label='', layout='monadtall', spawn='brave'),
     Group('2', label='', layout='monadtall', spawn='code', matches=[Match(wm_class=["code"])]),
     Group('3', label='', layout='columns', spawn=['alacritty','alacritty']),
     Group('4', label='', layout='monadtall'),
@@ -152,6 +145,7 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         wallpaper = "/home/plrenaudin/Pictures/wallpaper/wall.jpg",
+        wallpaper_mode="fill",
         top=bar.Bar(
             [
                 widget.GroupBox(highlight_method='line', highlight_color='00000000',this_current_screen_border=WHITE),
@@ -208,8 +202,9 @@ floating_layout = layout.Floating(
 		Match(wm_class='confirm'),
 		Match(wm_class='dialog'),
 		Match(wm_class='download'),
-		Match(wm_class='error'),
 		Match(wm_class='notification'),
+		Match(wm_class='error'),
+		Match(wm_class='ulauncher'),
 		Match(wm_class='confirmreset'),  # gitk
     ]
 )
