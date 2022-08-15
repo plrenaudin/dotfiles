@@ -94,7 +94,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn('brightnessctl s 2000-')),
     Key([], "XF86MonBrightnessUp", lazy.spawn('brightnessctl s +2000')),
 
-    Key([mod], "Print", lazy.spawn("scrot -e 'mv $f /home/plrenaudin/Pictures/' -s")),
+    Key([mod], "Print", lazy.spawn("flameshot gui")),
 
     Key([mod], "e", lazy.spawn("thunar")),
 ]
@@ -104,8 +104,8 @@ groups = (
     Group('2', label='', layout='monadtall', spawn='code', matches=[Match(wm_class=["code"])]),
     Group('3', label='', layout='columns'),
     Group('4', label='', layout='monadtall'),
-    Group('5', label='⛁', layout='monadtall'),
     Group('6', label='', layout='monadtall'),
+    Group('5', label='⛁', layout='monadtall'),
     Group('7', label='★', layout='monadtall'),
     Group('8', label='★', layout='monadtall'),
     ScratchPad('scratchpad', [DropDown(
@@ -144,7 +144,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper = "/home/plrenaudin/Pictures/wallpaper/wall.jpg",
+        wallpaper = "/home/plrenaudin/Pictures/wallpaper/wall2.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -203,8 +203,10 @@ floating_layout = layout.Floating(
 		Match(wm_class='dialog'),
 		Match(wm_class='download'),
 		Match(wm_class='notification'),
+		Match(wm_class='zoom'),
 		Match(wm_class='error'),
 		Match(wm_class='ulauncher'),
+		Match(wm_class='Thunar'),
 		Match(wm_class='confirmreset'),  # gitk
     ]
 )
