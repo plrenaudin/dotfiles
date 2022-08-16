@@ -44,6 +44,12 @@ mod = "mod4"
 terminal = guess_terminal()
 home = os.path.expanduser('~')
 
+@lazy.function
+def float_to_front(qtile):
+    for group in qtile.groups:
+        for window in group.windows:
+            if window.floating:
+                window.cmd_bring_to_front()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -84,6 +90,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "m", lazy.window.toggle_fullscreen(), desc='toggle window between minimum and maximum sizes'),
+    Key([mod, "shift"], "Tab", lazy.group.next_window(), desc='cycle through window'),
+    Key([mod, "control"], "f", float_to_front, desc='brign all floating to front'),
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc='toggle floating'),
     Key([], "F12", lazy.group["scratchpad"].dropdown_toggle('term'), desc='Dropdown terminal'),
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
