@@ -200,9 +200,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" ; and : enter command mode
-nnoremap ; :
-
 " w!! save sudo required files
 cmap w!! w !sudo tee % >/dev/null
 
