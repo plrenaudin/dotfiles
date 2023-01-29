@@ -121,7 +121,7 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4
+" let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
@@ -177,6 +177,12 @@ try
   set stal=2
 catch
 endtry
+
+" set rg is available
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
