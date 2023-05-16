@@ -110,6 +110,10 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
+  normal:
+    family: "FiraCode Nerd Font"
+  bold:
+    family: "FiraCode Nerd Font"
   #normal:
     # Font family
     #
