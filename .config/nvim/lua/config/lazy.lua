@@ -6,12 +6,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "json", "jsonc" },
-  callback = function()
-    vim.wo.conceallevel = 0
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "json", "jsonc" },
+--   callback = function()
+--     vim.wo.conceallevel = 0
+--   end,
+-- })
 
 require("lazy").setup({
   spec = {
@@ -34,7 +34,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try intalling the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight"} },
+  install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
