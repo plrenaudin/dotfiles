@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "slate" } },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -34,7 +34,6 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try intalling the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight"} },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
