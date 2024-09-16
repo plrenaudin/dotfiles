@@ -3,4 +3,4 @@
 -- Add any additional options here
 --
 vim.opt.conceallevel = 0
-vim.opt.scrolloff = 30
+vim.opt.scrolloff = 10
