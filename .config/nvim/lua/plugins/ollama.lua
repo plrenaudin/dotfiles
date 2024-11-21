@@ -28,6 +28,6 @@ return {
   ---@type Ollama.Config
   opts = {
     -- your configuration overrides
-    model = "llama3"
-  }
+    model = "qwen2.5-coder:14b",
+  },
 }
