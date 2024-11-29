@@ -20,6 +20,7 @@ return {
      },
     },
   },
+  { "sphamba/smear-cursor.nvim", opts= {} }
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim
@@ -32,7 +33,7 @@ return {
 --   -- add gruvbox
 --   { "ellisonleao/gruvbox.nvim" },
 --
-   -- Configure LazyVim to load gruvbox
+-- Configure LazyVim to load gruvbox
 --
 --   -- change trouble config
 --   {
