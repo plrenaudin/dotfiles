@@ -26,8 +26,6 @@ return {
       },
     },
   },
-  -- fancy animated cursor
-  { "sphamba/smear-cursor.nvim", opts = {} },
   {
     "olimorris/codecompanion.nvim",
     dependencies = {
