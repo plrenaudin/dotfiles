@@ -7,32 +7,10 @@ return {
     },
   },
   {
-    "nvim-telescope/telescope.nvim",
-    -- change some options
-    opts = {
-      defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-        hidden = true,
-      },
-      pickers = {
-        find_files = {
-          hidden = true,
-          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-        },
-      },
-    },
-  },
-  {
     "olimorris/codecompanion.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "hrsh7th/nvim-cmp", -- Optional: For using slash commands and variables in the chat buffer
-      "nvim-telescope/telescope.nvim", -- Optional: For using slash commands
     },
     config = true,
     opts = {
