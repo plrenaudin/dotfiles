@@ -22,13 +22,13 @@ return {
       adapters = {
         ollama = function()
           return require("codecompanion.adapters").extend("ollama", {
-            name = "qwen2.5-coder:14b",
+            name = "Mistral",
             schema = {
               model = {
-                default = "qwen2.5-coder:14b",
+                default = "mistral-small:latest",
               },
               num_ctx = {
-                default = 16384,
+                default = 32000,
               },
               num_predict = {
                 default = -1,

@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local gitsigns = require("gitsigns")
+vim.api.nvim_set_keymap("n", "M-j", ":cnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "M-k", ":cprevious<CR>", { noremap = true, silent = true })
+
 -- local fzf = require("fzf-lua")
 
 -- vim.keymap.set("n", "<leader>gF", function()
