@@ -55,10 +55,10 @@ transparent_background_colors = true
 size = 14
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "FiraCode Nerd Font Mono"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "FiraCode Nerd Font Mono"
 
 [window]
 decorations = "none"
