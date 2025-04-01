@@ -7,6 +7,20 @@ return {
     },
   },
   {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          explorer = {
+            hidden = true,
+            ignored = true,
+            git_untracked = true,
+          },
+        },
+      },
+    },
+  },
+  {
     "christoomey/vim-tmux-navigator",
     cmd = {
       "TmuxNavigateLeft",
