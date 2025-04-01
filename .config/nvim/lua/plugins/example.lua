@@ -29,7 +29,7 @@ return {
     opts = {
       provider = "ollama",
       ollama = {
-        model = "gemma3:12b",
+        model = "gemma3",
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
