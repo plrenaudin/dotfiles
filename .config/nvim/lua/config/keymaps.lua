@@ -26,3 +26,6 @@ vim.keymap.set("n", "<leader>go", function()
     confirm = display_diff,
   })
 end, { desc = "Diff current file with selected branch" })
+
+vim.keymap.set("n", "<leader>ff", LazyVim.pick("files", { root = false }))
+vim.keymap.set("n", "<leader>sg", LazyVim.pick("live_grep", { root = false }))
