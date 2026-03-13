@@ -12,7 +12,7 @@ return {
       })
 
       -- Apply colorscheme
-      vim.cmd("colorscheme catppuccin")
+      vim.cmd("colorscheme catppuccin-mocha")
 
       -- Immediately override with transparent backgrounds
       vim.schedule(function()
